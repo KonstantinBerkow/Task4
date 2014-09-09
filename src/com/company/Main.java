@@ -6,18 +6,21 @@ import java.util.List;
 
 public class Main {
 
+    private static final String DEFAULT_PATH = "D:/Program Files";
+
     public static void main(String[] args) {
-        // write your code here
-        /*String dirPath = "E:/";//args[0];
-        File initialDir = new File(dirPath);
+        String path;
+        if (args.length > 0) {
+            path = args[0];
+            System.out.println("Proceeding to file " + path);
+        } else {
+            path = DEFAULT_PATH;
+            System.out.println("No arguments! Proceeding to default file " + path);
+        }
 
-        if (!initialDir.isDirectory()) {
-            System.err.println("Given pathname do not represents directory!");
-            return;
-        }*/
+        File initial = new File(path);
 
-        File file = new File("E:/EmptyDir");
-        FileSystemEntry fse = FileSystemEntry.newFileSystemEntry(file);
+        FileSystemEntry fse = FileSystemEntry.newFileSystemEntry(initial);
 
         FileSystemEntry.printFSE(fse, 0, "\t");
     }
