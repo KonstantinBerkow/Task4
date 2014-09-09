@@ -1,13 +1,16 @@
 package com.company;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
 
     private static final String DEFAULT_PATH = "D:/Program Files";
 
+    /**
+     * File to test new methods - newFileSystemEntry and printFSE
+     *
+     * @param args path to directory or file to create FileSystemEntry from it
+     */
     public static void main(String[] args) {
         String path;
         if (args.length > 0) {
